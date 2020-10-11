@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>lowmess Stats</title>
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <style>
+      :root {
+        --primary: #f2930d;
+        --background: #fff;
+        --text: #443e35;
+        --muted: #efedea;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background: #39342d;
+          --text: #efedea;
+          --muted: #2a2722;
+        }
+      }
+
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
+      @media (min-width: 64em) {
+        html {
+          font-size: 112.5%;
+        }
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        border-top: 0.5rem solid;
+        border-color: var(--primary);
+        padding-top: 4rem;
+        cursor: default;
+        background-color: var(--background);
+        color: var(--text);
+        font-family: Inter, system-ui, sans-serif;
+        font-feature-settings: "calt", "rlig", "case", "cv01";
+        line-height: 1.5;
+      }
+
+      ::selection {
+        background-color: var(--primary);
+        color: var(--text);
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem;
+      }
+
+      header svg {
+        color: var(--primary);
+        width: auto;
+        height: 1.5rem;
+      }
+
+      main {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 1.5rem;
+        line-height: 1.25;
+        font-weight: 600;
+      }
+
+      svg:not([fill]) {
+        fill: currentColor;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 40rem;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .stat {
+        display: grid;
+        grid-template-columns: 1;
+        grid-gap: 0.5rem;
+        padding: 0.5rem 1rem;
+      }
+
+      @media (min-width: 28em) {
+        .stat {
+          grid-template-columns: 12rem 1fr;
+          grid-gap: 1rem;
+        }
+      }
+
+      .stat:nth-child(2n) {
+        background-color: var(--muted);
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 1rem;
+        line-height: inherit;
+        font-weight: 600;
+      }
+
+      .value {
+        font-feature-settings: "tnum", "cv01";
+      }
+
+      .book + .book {
+        margin-top: 0.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="container">
+      <svg
+        viewBox="0 0 281 241"
+        xmlns="http://www.w3.org/2000/svg"
+        width="25"
+        height="21"
+        aria-hidden
+      >
+        <path
+          d="M280 120v120c-46.795 0-93.59.148-140.385-.001-24.624-.235-48.379-16.914-56.455-40.76-2.093-6.18-3.139-12.726-3.16-19.207V40H40v200H0V0h120c0 60.088-.568 120.178.002 180.263.164 10.317 9.135 19.703 20.03 19.737H240v-40h-80V0h40v120h80z"
+        />
+      </svg>
+
+      <h1>30 Day Stats</h1>
+    </header>
+
+    <main class="container">
+      <div class="stat">
+        <h2>GitHub Commits</h2>
+        <div class="value" data-stat="commits">&mdash;</div>
+      </div>
+
+      <div class="stat">
+        <h2>Tweets Sent</h2>
+        <div class="value" data-stat="tweets">&mdash;</div>
+      </div>
+
+      <div class="stat">
+        <h2>Steps Taken</h2>
+        <div class="value" data-stat="steps">&mdash;</div>
+      </div>
+
+      <div class="stat">
+        <h2>Places Visited</h2>
+        <div class="value" data-stat="places">&mdash;</div>
+      </div>
+
+      <div class="stat">
+        <h2>Songs Played</h2>
+        <div class="value" data-stat="songs">&mdash;</div>
+      </div>
+
+      <div class="stat">
+        <h2>Top Album</h2>
+        <div class="value" data-stat="album">&mdash;</div>
+      </div>
+
+      <div class="stat books">
+        <h2>Currently Reading</h2>
+        <div data-books-container>
+          <div class="book">&mdash;</div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

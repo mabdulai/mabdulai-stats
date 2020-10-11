@@ -1,0 +1,23 @@
+{
+  "name": "mabdulai.stats",
+  "version": "1.0.0",
+  "description": "Mabdulai Personal Stats",
+  "main": "graphql/index.js",
+  "scripts": {
+    "start": "nodemon -r esm graphql/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "abort-controller": "^3.0.0",
+    "apollo-server": "^2.18.2",
+    "apollo-server-plugin-response-cache": "^0.5.5",
+    "date-fns": "^2.16.1",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "graphql": "^15.3.0",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.4"
+  }
+}
