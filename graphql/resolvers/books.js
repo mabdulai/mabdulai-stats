@@ -1,5 +1,5 @@
 import xml2js from "xml2js";
-import fetch from "../lib/fetchWithTimeout";
+import fetch from "../lib/fetch-timeout";
 
 const getBooks = async () => {
   const uri = `https://www.goodreads.com/review/list?v=2&id=${process.env.GOODREADS_ID}&shelf=currently-reading&key=${process.env.GOODREADS_KEY}`;

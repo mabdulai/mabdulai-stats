@@ -2,7 +2,7 @@ import { gql } from "apollo-server";
 import getCommits from "./resolvers/commits";
 import getTweets from "./resolvers/tweets";
 // import getAlbum, { AlbumInfo } from './resolvers/album'
-import getBooks, { Book } from "./resolvers/books";
+import getBooks from "./resolvers/books";
 
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`

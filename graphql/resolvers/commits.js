@@ -1,4 +1,4 @@
-import fetch from "../lib/fetchWithTimeout";
+import fetch from "../lib/fetch-timeout";
 import { thirtyDaysAgo } from "../lib/date";
 
 const getCommits = async () => {
@@ -29,7 +29,7 @@ const getCommits = async () => {
   const response = await fetch(`https://api.github.com/graphql`, options);
   const { data } = await response.json();
 
-  if (!data?.viewer) {
+  if (!data.viewer) {
     throw new Error(`GitHub responded without a data object`);
   }
 
