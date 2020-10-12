@@ -6,10 +6,6 @@ import getBooks from "./resolvers/books";
 
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
-  type Album {
-    name: String
-    artist: String
-  }
   type Book {
     name: String
     author: String
@@ -17,10 +13,6 @@ const typeDefs = gql`
   type Query {
     commits: Int @cacheControl(maxAge: 3600)
     tweets: Int @cacheControl(maxAge: 3600)
-    places: Int @cacheControl(maxAge: 86400)
-    steps: Int @cacheControl(maxAge: 3600)
-    songs: Int @cacheControl(maxAge: 3600)
-    album: Album @cacheControl(maxAge: 3600)
     books: [Book] @cacheControl(maxAge: 86400)
   }
 `;
@@ -57,14 +49,11 @@ const resolvers = {
     },
     books: async () => {
       try {
+        const books = await getBooks();
+        return books;
       } catch (error) {
-        return error;
-      }
-    },
-    songs: async () => {
-      try {
-      } catch (error) {
-        return error;
+        console.error(error.message ? error.message : error);
+        return null;
       }
     },
   },

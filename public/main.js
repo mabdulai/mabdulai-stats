@@ -28,7 +28,6 @@ fetch("/graphql", {
 })
   .then((res) => res.json())
   .then((json) => {
-    console.log(json.data);
     if (json.data) {
       // Tweets
       if (typeof json.data.tweets === "number") {

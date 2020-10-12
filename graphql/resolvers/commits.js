@@ -13,7 +13,6 @@ const getCommits = async () => {
   const variables = {
     date: thirtyDaysAgo().toISOString(),
   };
-
   const options = {
     method: "POST",
     body: JSON.stringify({

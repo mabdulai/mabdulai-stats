@@ -1,7 +1,7 @@
 import { ApolloServer } from "apollo-server";
 import responseCachePlugin from "apollo-server-plugin-response-cache";
 import { typeDefs, resolvers } from "./schema";
-
+require("dotenv").config();
 const defaultQuery = `{
   commits
   tweets
