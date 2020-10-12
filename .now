@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "graphql/index.ts",
+      "use": "@now/node"
+    },
+    {
+      "src": "public/*",
+      "use": "@now/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/graphql",
+      "headers": { "Cache-Control": "s-maxage=3600" },
+      "dest": "/graphql/index.ts"
+    },
+    {
+      "src": "/(.*)",
+      "headers": { "Cache-Control": "s-maxage=86400" },
+      "dest": "/public/$1"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "TWITTER_KEY": "@twitter_key",
+  }
+}
