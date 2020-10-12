@@ -2,6 +2,12 @@ const stat = (selector, value) => {
   document.querySelector(`[data-stat=${selector}]`).innerHTML = value;
 };
 
+const markupBook = ({ name, author }) => `
+  <div class="book">
+    &ldquo;${name}&rdquo;, ${author}
+  </div>
+`;
+
 const fillBooks = (books) => {
   const container = document.querySelector("[data-books-container]");
   container.innerHTML = "";
@@ -32,6 +38,14 @@ fetch("/graphql", {
       // Tweets
       if (typeof json.data.tweets === "number") {
         stat("tweets", json.data.tweets.toLocaleString());
+      }
+      // Commits
+      if (typeof json.data.commits === "number") {
+        stat("commits", json.data.commits.toLocaleString());
+      }
+      // Book
+      if (json.data.books) {
+        fillBooks(json.data.books);
       }
     }
   })
