@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "graphql/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "public/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/graphql",
+      "headers": { "Cache-Control": "s-maxage=3600" },
+      "dest": "/graphql/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "headers": { "Cache-Control": "s-maxage=86400" },
+      "dest": "/public/$1"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "TWITTER_KEY": "@twitter_key"
+  }
+}
