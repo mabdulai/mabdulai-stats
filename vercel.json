@@ -22,8 +22,9 @@
       "dest": "/public/$1"
     }
   ],
-  "env": {
-    "NODE_ENV": "production",
-    "TWITTER_KEY": "@twitter_key"
+  "build": {
+    "env": {
+      "TWITTER_KEY": "@TWITTER_KEY"
+    }
   }
 }
