@@ -2,9 +2,13 @@
   "name": "mabdulai.stats",
   "version": "1.0.0",
   "description": "Mabdulai Personal Stats",
-  "main": "graphql/index.js",
+  "main": "./graphql/index.js",
+  "engines": {
+    "node": "12.x"
+  },
   "scripts": {
-    "start": "nodemon -r esm graphql/index.js",
+    "start": "now dev",
+    "deploy": "now deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -19,5 +23,8 @@
     "graphql": "^15.3.0",
     "node-fetch": "^2.6.1",
     "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "now": "^20.1.2"
   }
 }
