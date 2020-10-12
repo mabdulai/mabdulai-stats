@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === "production") {
   config.playground = {
     tabs: [
       {
-        endpoint: "https://mabdulai-stats-graphql.vercel.app/graphql",
+        endpoint: "https://mabdulai-stats.vercel.app/graphql",
         query: defaultQuery,
       },
     ],
