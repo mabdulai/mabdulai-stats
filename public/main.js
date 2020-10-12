@@ -19,7 +19,7 @@ const query = `
     tweets
   }`;
 
-fetch("https://mabdulai-stats-m08q7p17w.vercel.app/", {
+fetch("/graphql", {
   method: "POST",
   body: JSON.stringify({ query }),
   headers: {
