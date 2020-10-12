@@ -19,7 +19,7 @@ const query = `
     tweets
   }`;
 
-fetch("http://localhost:4000", {
+fetch("https://mabdulai-stats-m08q7p17w.vercel.app/", {
   method: "POST",
   body: JSON.stringify({ query }),
   headers: {
