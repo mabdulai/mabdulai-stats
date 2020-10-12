@@ -17,3 +17,5 @@ const server = new ApolloServer(config);
 server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
   console.log(`🚀 app running at ${url}`);
 });
+
+export default server;
