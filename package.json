@@ -19,10 +19,10 @@
     "apollo-server-plugin-response-cache": "^0.5.5",
     "date-fns": "^2.16.1",
     "esm": "^3.2.25",
-    "express": "^4.17.1",
     "graphql": "^15.3.0",
     "node-fetch": "^2.6.1",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {
     "now": "^20.1.2"

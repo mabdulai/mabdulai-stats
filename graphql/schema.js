@@ -1,11 +1,8 @@
 import { gql } from "apollo-server";
-// import getCommits from './resolvers/commits'
+import getCommits from "./resolvers/commits";
 import getTweets from "./resolvers/tweets";
-// import getPlaces from './resolvers/places'
-// import getSteps from './resolvers/steps'
-// import getSongs from './resolvers/songs'
 // import getAlbum, { AlbumInfo } from './resolvers/album'
-// import getBooks, { Book } from './resolvers/books'
+import getBooks, { Book } from "./resolvers/books";
 
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
@@ -33,14 +30,20 @@ const resolvers = {
   Query: {
     books: async () => {
       try {
+        const books = await getBooks();
+        return books;
       } catch (error) {
-        return error;
+        console.error(error.message ? error.message : error);
+        return null;
       }
     },
     commits: async () => {
       try {
+        const commits = await getCommits();
+        return commits;
       } catch (error) {
-        return error;
+        console.error(error.message ? error.message : error);
+        return null;
       }
     },
     tweets: async () => {

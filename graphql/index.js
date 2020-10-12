@@ -1,11 +1,14 @@
-import express from "express";
-import { ApolloServer, Config } from "apollo-server";
+import { ApolloServer } from "apollo-server";
 import responseCachePlugin from "apollo-server-plugin-response-cache";
 import { typeDefs, resolvers } from "./schema";
 
 const defaultQuery = `{
   commits
   tweets
+  books {
+    name
+    author
+  }
 }`;
 
 const config = {
