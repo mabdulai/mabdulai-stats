@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "graphql/index.ts",
+      "src": "graphql/index.js",
       "use": "@now/node"
     },
     {
@@ -14,7 +14,7 @@
     {
       "src": "/graphql",
       "headers": { "Cache-Control": "s-maxage=3600" },
-      "dest": "/graphql/index.ts"
+      "dest": "/graphql/index.js"
     },
     {
       "src": "/(.*)",
