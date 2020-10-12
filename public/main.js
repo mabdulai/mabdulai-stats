@@ -22,7 +22,12 @@ const fillBooks = (books) => {
 
 const query = `
   query LocalQuery {
+    commits
     tweets
+    books {
+      name
+      author
+    }
   }`;
 
 fetch("/graphql", {
