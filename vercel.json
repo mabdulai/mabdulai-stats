@@ -21,10 +21,5 @@
       "headers": { "Cache-Control": "s-maxage=86400" },
       "dest": "/public/$1"
     }
-  ],
-  "build": {
-    "env": {
-      "TWITTER_KEY": "@TWITTER_KEY"
-    }
-  }
+  ]
 }
