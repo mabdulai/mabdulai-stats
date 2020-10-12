@@ -3,6 +3,11 @@ import { ApolloServer, Config } from "apollo-server";
 import responseCachePlugin from "apollo-server-plugin-response-cache";
 import { typeDefs, resolvers } from "./schema";
 
+const defaultQuery = `{
+  commits
+  tweets
+}`;
+
 const config = {
   typeDefs,
   resolvers,
@@ -13,6 +18,19 @@ const config = {
 };
 
 const server = new ApolloServer(config);
+
+if (process.env.NODE_ENV === "production") {
+  config.playground = {
+    tabs: [
+      {
+        endpoint: "https://mabdulai-stats-graphql.vercel.app/graphql",
+        query: defaultQuery,
+      },
+    ],
+  };
+
+  config.plugins = [responseCachePlugin()];
+}
 
 server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
   console.log(`🚀 app running at ${url}`);
