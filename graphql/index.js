@@ -1,14 +1,19 @@
+import {} from "dotenv/config";
 import { ApolloServer } from "apollo-server";
 import responseCachePlugin from "apollo-server-plugin-response-cache";
 import { typeDefs, resolvers } from "./schema";
-require("dotenv").config();
 const defaultQuery = `{
   commits
   tweets
+  games {
+    owned_games
+    recently_played
+  }
   books {
     name
     author
   }
+  music
 }`;
 
 const config = {

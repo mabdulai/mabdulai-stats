@@ -28,6 +28,10 @@ const query = `
       name
       author
     }
+    games {
+      owned_games
+      recently_played
+    }
   }`;
 
 fetch("/graphql", {
@@ -51,6 +55,12 @@ fetch("/graphql", {
       // Book
       if (json.data.books) {
         fillBooks(json.data.books);
+      }
+      if (typeof json.data.games.owned_games === "number") {
+        stat("owned_games", json.data.games.owned_games.toLocaleString());
+      }
+      if (json.data.games.recently_played) {
+        stat("recently_played", json.data.games.recently_played);
       }
     }
   })

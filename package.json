@@ -7,7 +7,7 @@
     "node": "12.x"
   },
   "scripts": {
-    "start": "nodemon -r esm graphql/index.js",
+    "start": "nodemon -r esm -w ./graphql",
     "deploy": "now deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,7 +21,10 @@
     "esm": "^3.2.25",
     "graphql": "^15.3.0",
     "node-fetch": "^2.6.1",
+    "node-steam": "0.0.1",
     "nodemon": "^2.0.4",
+    "spotify-web-api-node": "^5.0.0",
+    "steam-web": "^0.7.0",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {

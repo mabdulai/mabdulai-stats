@@ -1,6 +1,5 @@
 import fetch from "../lib/fetch-timeout";
 import { thirtyDaysAgo } from "../lib/date";
-
 const thirtyDaysAgoTime = thirtyDaysAgo().getTime();
 const getTweets = async (tweets = new Set(), maxId) => {
   let uri =
