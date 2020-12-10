@@ -25,10 +25,10 @@ const typeDefs = gql`
   }
 
   type Query {
-    commits: Int @cacheControl(maxAge: 3600)
-    tweets: Int @cacheControl(maxAge: 3600)
-    books: [Book] @cacheControl(maxAge: 86400)
-    games: Game @cacheControl(maxAge: 3600)
+    commits: Int
+    tweets: Int
+    books: [Book]
+    games: Game
   }
 `;
 

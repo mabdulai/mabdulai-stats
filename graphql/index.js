@@ -1,6 +1,5 @@
 import {} from "dotenv/config";
 import { ApolloServer } from "apollo-server";
-import responseCachePlugin from "apollo-server-plugin-response-cache";
 import { typeDefs, resolvers } from "./schema";
 const defaultQuery = `{
   commits
@@ -19,7 +18,6 @@ const defaultQuery = `{
 const config = {
   typeDefs,
   resolvers,
-  cacheControl: true,
   tracing: true,
   introspection: true,
   playground: true,
@@ -36,10 +34,7 @@ if (process.env.NODE_ENV === "production") {
       },
     ],
   };
-
-  config.plugins = [responseCachePlugin()];
 }
-
 server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
   console.log(`🚀 app running at ${url}`);
 });
